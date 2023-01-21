@@ -4,7 +4,6 @@ export function NewComponent(){
     const [variable, setVariable] = useState("");
 
     useEffect(() => {
-        setVariable("Test");
     }, []);
 
     const clicked = ({parameter1}) => {
