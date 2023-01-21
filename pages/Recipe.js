@@ -1,7 +1,8 @@
+
 import {useState, useEffect} from 'react'
 
 
-export function NewComponent(){
+export function Recipe(){
     const [variable, setVariable] = useState("");
 
     useEffect(() => {
@@ -38,4 +39,5 @@ export function NewComponent(){
     )
 }
 
-export default NewComponent;
+export default Recipe;
+
