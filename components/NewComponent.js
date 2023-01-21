@@ -4,9 +4,6 @@ export function NewComponent(){
     const [variable, setVariable] = useState("");
 
     useEffect(() => {
-        axios
-        return(() => 
-        api.removelistener())
     }, []);
 
     const clicked = ({parameter1}) => {
