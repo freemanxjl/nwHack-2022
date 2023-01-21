@@ -4,10 +4,12 @@ export function NewComponent(){
     const [variable, setVariable] = useState("");
 
     useEffect(() => {
-        setVariable("Test");
+        axios
+        return(() => 
+        api.removelistener())
     }, []);
 
-    const clicked = () => {
+    const clicked = ({parameter1}) => {
         setVariable("Button Clicked!");
     };
 
