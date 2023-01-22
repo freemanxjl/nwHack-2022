@@ -16,9 +16,9 @@ export function setterRecipes(input, setRecipe) {
             }
         };
         
-        axios.request(recipe).then(function (response) {
-            setRecipe(response.data[0]);
-        }).catch(function (error) {
+        axios.request(recipe).then((response) => {
+            setRecipe(response.data);
+        }).catch((error) => {
             console.error(error);
         });
 
