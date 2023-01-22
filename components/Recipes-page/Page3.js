@@ -1,9 +1,8 @@
 import setterNutrition from "./setterNutrition";
 import setterImage from "./setterImage";
-import setterRecipes from "./setterRecipes";
-import { ChosenRecipe } from "./chosenRecipe";
+import ChosenRecipe from "./chosenRecipe";
 import { useEffect, useState } from "react";
-import { ChosenNutrition } from "./chosenNutrition";
+import ChosenNutrition from "./chosenNutrition";
 
 export function Page3({recipe}) {
     const [image, setImage] = useState("");

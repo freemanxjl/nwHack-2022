@@ -13,8 +13,6 @@ export function Recipes() {
         setterNutrition("chicken", setRecipe);
         setterImage("chicken", setImage);
     }, []);
-
-
-
-
 }
+
+export default Recipes;

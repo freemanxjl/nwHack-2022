@@ -1,18 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head';
-import Results from './Results';
 import { Page2 } from "../components/Recipes-page/Page2"
-import { Recipes } from '../components/Recipes-page/Recipes';
-import Search from './Search';
+import Search from '../components/search-page/Search';
+import {Page3} from '../components/Recipes-page/Page3';
 
-function Home(){
+export function Home(){
+  const [input, setInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState(null);
+  const [recipe, setRecipe] = useState(null);
+  const [chosenRecipe, setChosenRecipe] = useState(null);
+
   return(
     <div style={{marginTop: '10rem'}}>
         <Head>
             <meta name="description" property="og:description" content=""/>
         </Head>
-        <Search/>
-        <Page2/>
+        {!searchTerm && !recipe && !chosenRecipe && <Search input={input} setInput={setInput} setSearchTerm={setSearchTerm} setRecipe={setRecipe}/>}
+        {searchTerm && recipe && !chosenRecipe && <Page2 input={input} setInput={setInput} recipe={recipe}
+               setRecipe={setRecipe} chosenRecipe={chosenRecipe}
+               setChosenRecipe={setChosenRecipe}/>}
+        {searchTerm && recipe && chosenRecipe && <Page3 recipe={chosenRecipe}/>}
     </div>
   );
 }

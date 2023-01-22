@@ -1,4 +1,4 @@
-export function ChosenNutrition ({nutrition}) {
+export function ChosenNutrition({nutrition}) {
     return (
         <div>
             {"Name : " + nutrition[0].name}

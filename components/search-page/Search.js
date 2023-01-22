@@ -1,7 +1,7 @@
-import { TextField } from '@material-ui/core';
 import React, { Component }  from 'react';
 import {useState, useEffect} from 'react'
 import styled from 'styled-components';
+import setterRecipes from '../Recipes-page/setterRecipes';
 
 const SearchBar = styled.input`
     height:3rem;
@@ -43,14 +43,11 @@ const Title = styled.h1`
     user-select: none;
 `;
 
-function Search(){
-    const [input, setInput] = useState("");
-
-
-
+export function Search({input, setInput, setSearchTerm, setRecipe}){
     const handleSubmit = (event) => {
         event.preventDefault();  
-        alert(input);
+        setSearchTerm(input);
+        setterRecipes(input, setRecipe)
     }
     return(
         <CenterDiv>

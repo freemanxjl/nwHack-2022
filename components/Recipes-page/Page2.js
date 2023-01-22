@@ -1,23 +1,15 @@
 
-import { List, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import { List, ListItem, ListItemText, ListItemButton, Divider } from '@mui/material';
 import React  from 'react';
 import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import Page3 from './Page3';
 
 
-const StyledDiv = styled.div`
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+const RecipeList = styled(List)`
 `;
 
-export function Page2() {
-    const [input, setInput] = useState("");
-    const [recipe, setRecipe] = useState("");
-    const [nutrition, setNutrition] = useState("");
-    const [image, setImage] = useState("");
-    const [chosenRecipe, setChosenRecipe] = useState(null);
-
+export function Page2({input, setInput, recipe, setRecipe, chosenRecipe, setChosenRecipe}) {
     useEffect(() => {
     }, []);
 
@@ -26,8 +18,6 @@ export function Page2() {
         event.preventDefault();  
 
         const axios = require("axios");
-
-        
 
         const recipe = {
             method: 'GET',
@@ -57,15 +47,19 @@ export function Page2() {
             <input type="submit" value="View Nutrition and Recipe"/>
         </form>
         {recipe &&
-            <List>
+            <RecipeList>
                 {recipe.map((item, index) => 
-                    <ListItem disablePadding key={index}>
-                        <ListItemButton onClick={(e) => setChosenRecipe(item)}>
-                            <ListItemText primary={item.title}/>
-                        </ListItemButton>
-                    </ListItem>
+                    <div>
+                        <ListItem disablePadding key={index}>
+                            <ListItemButton onClick={(e) => setChosenRecipe(item)}>
+                                <ListItemText primary={item.title}/>
+                            </ListItemButton>
+                        </ListItem>
+                        <Divider/>
+                    </div>
+
                 )}
-            </List>
+            </RecipeList>
         } 
         {chosenRecipe && <Page3 recipe={chosenRecipe}/>}
     </div>
