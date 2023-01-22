@@ -56,7 +56,7 @@ useEffect(() => {
             <div>
                 <h5>
                     Source: 
-                    <a href="{source}"> {source}</a>
+                    <a href={source} target="_blank" rel="noreferrer noopener">{source}</a>
                 </h5>
             </div>
             <div>

@@ -7,8 +7,13 @@ export function ChosenNutrition({nutrition}) {
             <br></br>
             {"Carbohydrates (g) : " + nutrition[0].carbohydrates_total_g}
             <br></br>
+            {"Protien (g): " + nutrition[0].protein_g}
+            <br></br>
+            {"Total Fat (g) : " + nutrition[0].protein_g}
+            <br></br>
             {"Cholesterol (mg) : " + nutrition[0].cholesterol_mg}
             <br></br>
+            {"Sugar (mg) : " + nutrition[0].sugar_g}
         </div>
     )
 }
