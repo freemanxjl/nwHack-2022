@@ -69,7 +69,7 @@ export function Page2({input, setInput, recipe, setRecipe, chosenRecipe, setChos
     }
 
     return (
-    <div className="nutrition">
+    <div className="nutrition" style={{marginTop: "10rem"}}>
         <form onSubmit={handleSubmit}>
             <SearchBar type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         </form>
