@@ -11,7 +11,7 @@ export function Home(){
   const [chosenRecipe, setChosenRecipe] = useState(null);
 
   return(
-    <div style={{marginTop: '10rem'}}>
+    <div>
         <Head>
             <meta name="description" property="og:description" content=""/>
         </Head>
