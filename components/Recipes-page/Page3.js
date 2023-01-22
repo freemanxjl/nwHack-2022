@@ -12,7 +12,7 @@ export function Page3({recipe}) {
     useEffect(() => {
         setterImage(recipe.title, setImage);
         setterNutrition(recipe.title, setNutrition);
-    },[]);
+    },[recipe]);
 
     return (
     <div>
