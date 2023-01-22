@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Recipe from './Recipe';
-import Nutrition from './Nutrition';
+import Results from './Results';
 
 function Home(){
   return(
@@ -9,8 +8,7 @@ function Home(){
         <Head>
             <meta name="description" property="og:description" content=""/>
         </Head>
-        <Recipe/>
-        <Nutrition/>
+        <Results/>
     </div>
   );
 }
