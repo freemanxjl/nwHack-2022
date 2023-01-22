@@ -2,6 +2,8 @@
 
 export function setterRecipes(input, setRecipe) {
 
+     
+
         const axios = require("axios");
 
         
@@ -16,38 +18,12 @@ export function setterRecipes(input, setRecipe) {
             }
         };
         
-        axios.request(recipe).then((response) => {
+        axios.request(recipe).then(function (response) {
             setRecipe(response.data);
-        }).catch((error) => {
+        }).catch(function (error) {
             console.error(error);
         });
 
-        
-
-
-//     return (
-//     <div className="nutrition">
-//         <form onSubmit={handleSubmit}>
-//             <label>Food:
-//             <input type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
-//             </label>
-//             <input type="submit" value="View Nutrition and Recipe"/>
-//         </form>
-//         {recipe && 
-//         <StyledDiv>
-//             {"Title : " + recipe[0].title}
-//             <br></br>
-//             {"Ingredients : " + recipe[0].ingredients}
-//             <br></br>
-//             {"Servings : " + recipe[0].servings}
-//             <br></br>
-//             {"Instructions : " + recipe[0].instructions}
-//             <br></br>
-//             </StyledDiv>}
-
-        
-//     </div>
-//   );
 
 }
 export default setterRecipes;
