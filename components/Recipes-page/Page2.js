@@ -1,7 +1,7 @@
 
-import React, { Component }  from 'react';
+import { List, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import React  from 'react';
 import {useState, useEffect} from 'react'
-import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import Page3 from './Page3';
 
@@ -57,17 +57,17 @@ export function Page2() {
             <input type="submit" value="View Nutrition and Recipe"/>
         </form>
         {recipe &&
-        <StyledDiv>
-            {recipe.map((item, index) => 
-            <Button variant = "link" onClick={(e) => setChosenRecipe(item)}>{item.title} </Button>)
-            }
-        </StyledDiv>
-
-            // {!recipes && !chosenRecipe && <Search></Search>}
-            // {recipes && !chosenRecipe && <SearchResults></SearchResults>}
-            // {recipes && chosenRecipe && <RecipePage chosenRecipe={chosenRecipe}></RecipePage>}
-} 
-    {chosenRecipe && <Page3 recipe={chosenRecipe}/>}
+            <List>
+                {recipe.map((item, index) => 
+                    <ListItem disablePadding key={index}>
+                        <ListItemButton onClick={(e) => setChosenRecipe(item)}>
+                            <ListItemText primary={item.title}/>
+                        </ListItemButton>
+                    </ListItem>
+                )}
+            </List>
+        } 
+        {chosenRecipe && <Page3 recipe={chosenRecipe}/>}
     </div>
   );
 
