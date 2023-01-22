@@ -1,15 +1,20 @@
 
 import {useState, useEffect} from 'react'
+import styled from 'styled-components';
 
+const StyledDiv = styled.div`
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+`;
 
 export function Recipe(){
-    const [variable, setVariable] = useState("");
+    const [recipe, setRecipe] = useState("");
 
     useEffect(() => {
     }, []);
 
     const TestConnection = () => {
-        setVariable("Test Button Clicked!");
+        
 
         const axios = require("axios");
 
@@ -24,7 +29,7 @@ export function Recipe(){
           };
           
           axios.request(options).then(function (response) {
-              console.log(response.data);
+              setRecipe(response.data);
           }).catch(function (error) {
               console.error(error);
           });
@@ -33,7 +38,17 @@ export function Recipe(){
 
     return(
         <div>
-            {variable}
+            {recipe && 
+            <StyledDiv>
+                {"Title : " + recipe[0].title}
+                <br></br>
+                {"Ingredients : " + recipe[0].ingredients}
+                <br></br>
+                {"Servings : " + recipe[0].servings}
+                <br></br>
+                {"Instructions : " + recipe[0].instructions}
+                <br></br>
+                </StyledDiv>}
             <button onClick={TestConnection}>Test Connection</button>
         </div>
     )
