@@ -2,6 +2,9 @@ import React, { Component }  from 'react';
 import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import setterRecipes from '../Recipes-page/setterRecipes';
+import Link from "next/link";
+import { Button } from 'react-bootstrap';
+
 
 const SearchBar = styled.input`
     height:3rem;
@@ -56,6 +59,8 @@ export function Search({input, setInput, setSearchTerm, setRecipe}){
         <form onSubmit={handleSubmit} style={{width:"100%", justifyContent:"center", alignItems:"center", flexDirection:"row", display:"flex"}}>
             <SearchBar type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         </form>
+
+        <Link href="/Random"><Button variant = "link"> Feeling Hungry?</Button></Link>
         </CenterDiv>
     );
   }
